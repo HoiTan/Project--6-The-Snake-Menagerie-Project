@@ -10,6 +10,7 @@ uniform float   uShininess;	 // specular exponent
 // square-equation uniform variables -- these should be set every time Display( ) is called:
 
 uniform float   uS0, uT0, uD;
+uniform float   uDeltaZ;
 
 // in variables from the vertex shader and interpolated in the rasterizer:
 
@@ -17,7 +18,7 @@ in  vec3  vN;		   // normal vector
 in  vec3  vL;		   // vector from point to light
 in  vec3  vE;		   // vector from point to eye
 in  vec2  vST;		   // (s,t) texture coordinates
-
+in float gLightIntensity;
 
 void
 main( )
@@ -47,6 +48,7 @@ main( )
 		ss = pow( max( dot(Eye,ref),0. ), uShininess );
 	}
 	vec3 specular = uKs * ss * uSpecularColor.rgb;
-	gl_FragColor = vec4( ambient + diffuse + specular,  1. );
+	gl_FragColor = vec4( gLightIntensity*(ambient + diffuse + specular),  1. );
+	gl_FragDepth = gl_FragCoord.z + uDeltaZ;
 }
 

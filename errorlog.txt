@@ -1,4 +1,3 @@
 
-0(13) : error C1503: undefined variable "viewportWidth"
-0(13) : error C1503: undefined variable "viewportHeight"
+0(51) : error C1503: undefined variable "deltaz"
 
