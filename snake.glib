@@ -1,0 +1,46 @@
+##OpenGL GLIB
+Perspective 70
+LookAt  0 0 5     0 0 0    0 1 0
+
+
+Vertex   snake.vert
+Fragment snake.frag
+Program snake 				\
+	uColor { 1.0 1.0 1.0 1.0 }		\
+	uLightX <-20.  0. 20.>			\
+	uLightY <-20. 20. 20.>			\
+	uLightZ <-20. 20. 20.>			\
+	uKa <0. 0.5 1.0>			\
+	uKd <0. 0.6 1.0>			\
+	uKs <0. 0.5 1.0>			\
+    uD <0.1 0.2 1.0>			\
+	uShininess <2. 10. 50.>     \
+    uSpecularColor {1. 1. 1. 1.}
+
+#Sphere
+#Obj Cloud.obj
+Obj snake.obj
+#Teapot
+
+Vertex   silh.vert
+#Geometry silh.geom
+Fragment silh.frag
+Program FragSilhouette \
+	uSColor {0.0 0. 0. 1.} \
+	uOColor { 1.0 1.0 1.0 1.0 } \
+	uSilh <false> \
+	uDeltaZ <0. 0.001 0.002> \
+	uOpaque <true> \
+	uTol <0. 0.04 0.5> \
+	uKa <0. 0.1 1.> \
+	uKd <0. 0.8 1.> \
+	uKs <0. 0.1 1.> \
+	uShininess <2. 10. 50.>
+     
+
+#ObjAdj Cloud.obj
+ObjAdj snake.obj
+
+#Sphere
+
+#Teapot

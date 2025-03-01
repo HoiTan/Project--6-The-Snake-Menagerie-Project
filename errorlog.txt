@@ -1,0 +1,4 @@
+
+0(13) : error C1503: undefined variable "viewportWidth"
+0(13) : error C1503: undefined variable "viewportHeight"
+
